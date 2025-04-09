@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload PDF Files for Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f0f0f0;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="file"], input[type="submit"] {
+            display: block;
+            margin: 10px 0;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">📝 Upload PDFs to Compare</h2>
+    <form method="POST" enctype="multipart/form-data">
+    <label>Party 1 Name:</label>
+    <input type="text" name="party1_name" required><br><br>
+
+    <label>Party 2 Name:</label>
+    <input type="text" name="party2_name" required><br><br>
+
+    <label>Upload Party 1 PDF:</label>
+    <input type="file" name="file1" accept=".pdf" required><br><br>
+
+    <label>Upload Party 2 PDF:</label>
+    <input type="file" name="file2" accept=".pdf" required><br><br>
+
+    <label>Upload Custom Font (optional):</label>
+    <input type="file" name="font" accept=".ttf,.otf"><br><br>
+
+    <label>Select Matching Criteria:</label><br>
+    <input type="checkbox" name="criteria" value="Amount" checked> Amount<br>
+    <input type="checkbox" name="criteria" value="Date"> Date<br>
+    <input type="checkbox" name="criteria" value="BillNo"> Bill No<br><br>
+
+    <button type="submit">Compare</button>
+</form>
+
+</body>
+</html>
